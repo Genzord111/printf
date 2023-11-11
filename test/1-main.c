@@ -3,27 +3,19 @@
 
 int main(void)
 {
-int count;
-char *q = "chi";
-int p = -200;
-char x = 'p';
-int y = 10;
-char *j = "co";
+    int count;
 
-count =_printf("Hello %d world %s",y, j);
-printf("%d\n",count);
+    count = _printf("Character: %c\n", 'A');
+    printf("Count: %d\n\n", count);
 
-count =_printf("Hello %d world %s",p, q);
-printf("%d\n",count);
+    count = _printf("String: %s\n", "Hello, World!");
+    printf("Count: %d\n\n", count);
 
-count =_printf("Hello world %d",p);
-printf("%d\n",count);
+    count = _printf("Percentage: %%\n");
+    printf("Count: %d\n\n", count);
 
-count =_printf("Hello world %s",q);
-printf("%d\n",count);
+    count = _printf("Multiple Specifiers: %c %s %%\n", 'B', "Testing");
+    printf("Count: %d\n\n", count);
 
-count =_printf("Hello world %c",x);
-printf("%d\n",count);
-
-return 1;
+    return 0;
 }
