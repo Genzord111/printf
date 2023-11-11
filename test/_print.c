@@ -47,31 +47,6 @@ int format_s(va_list args, char c, int count)
 }
 
 /**
- * print_number - writes an integer to stdout
- * @n: integer parameter to be printed
- * @count: tracks number of int printed
- * Return: count
- */
-
-int print_number(int n, int count)
-{
-	unsigned int num = n;
-
-	if (n < 0)
-	{
-		_putchar(45);
-		num = -num;
-		count += 1;
-	}
-	if ((num / 10) != 0)
-	{
-		count = print_number((num / 10), count);
-	}
-	_putchar((num % 10) + '0');
-	return (count + 1);
-}
-
-/**
  * print_string - writes a string to stdout
  * @str: string parameter to be printed
  * Return: count
@@ -93,18 +68,6 @@ int print_string(char *str)
 	return (0);
 }
 
-/**
- * print_char - writes a character to stdout
- * @c: char parameter to be printed
- * Return: count
- */
-
-int print_char(char c)
-{
-	_putchar(c);
-
-	return (1);
-}
 /**
  * _printf - produces output according to a format similar to printf.
  * @format: string parameter to be printed

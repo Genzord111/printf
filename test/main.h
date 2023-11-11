@@ -3,6 +3,13 @@
 
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdarg.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include "main.h"
+
+int print_number(int n, int count);
 ssize_t write(int fd, const void *buf, size_t count);
 int _putchar(char c);
 int _printf(const char *format, ...);
