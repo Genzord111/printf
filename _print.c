@@ -33,6 +33,11 @@ int format_s(va_list args, char c, int count)
 		char_var = va_arg(args, int);
 		count += print_char(char_var);
 	}
+	else if (c == '%')
+	{
+		_putchar(37);
+		count += 1;
+	}
 	else
 	{
 		_putchar(c);
@@ -120,6 +125,20 @@ int _printf(const char *format, ...)
 		{
 			count = format_s(args, format[i + 1], count);
 			i++;
+		}
+		else if (format[i] == '\\')
+		{
+			if (format[i + 1] == '\\')
+			{
+				_putchar(92);
+				count += 1;
+				i = i + 2;
+			}
+			else
+			{
+				count = _escapechar(format[i + 1]);
+				i++;
+			}
 		}
 		else
 		{
