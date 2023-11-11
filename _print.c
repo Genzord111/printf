@@ -96,12 +96,8 @@ int print_string(char *str)
 
 int print_char(char c)
 {
-	if (c != NULL)
-	{
 		_putchar(c);
 		return (1);
-	}
-	return 0;
 }
 /**
  * _printf - produces output according to a format similar to printf.
