@@ -28,7 +28,9 @@ int format_s(va_list args, char c, int count)
                         break;
                 case 'b':
                         num_var = va_arg(args, int);
-                        count += print_binary(num_var);
+                        str_var = print_binary(num_var);
+			count += strlen(str_var);
+			print_string(str_var);
                         break;
 
 
@@ -98,11 +100,6 @@ int _printf(const char *format, ...)
                 if (format[i] == '%')
                 {
                         count = format_s(args, format[i+1], count);
-                        i++;
-                }
-                else if (format[i] == '\\')
-                {
-                        count = _escapechar(format[i+1]);
                         i++;
                 }
                 else

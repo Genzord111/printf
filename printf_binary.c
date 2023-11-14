@@ -1,37 +1,34 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/**
- * printf_binary - Start to print a binary number
- * @num: Specifies the number of arguements
- * @printed: Specifies the printed characters
- * Return: The printed charcaters (Ends)
- */
+char *print_binary(int num) {
+    
+    int bits = 0;
+    int temp = num;
+    char *binaryString;
+    int index;
 
-int printf_binary(unsigned int num, int printed)
-{
-	int binary[32] = {0};
-	int i = 0;
+    while (temp > 0) {
+        temp /= 2;
+        bits++;
+    }
 
-	if (num == 0)
-	{
-		_putchar('0');
-		printed++;
-		return (printed);
-	}
+    binaryString = (char *)malloc(bits + 1);
+    if (binaryString == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        exit(EXIT_FAILURE);
+    }
 
-	while (num > 0)
-	{
-		binary[i] = num % 2;
-		num /= 2;
-		i++;
-	}
 
-	while (i > 0)
-	{
-		i--;
-		_putchar('0' + binary[i]);
-		printed++;
-	}
+    index = bits;
+    binaryString[index] = '\0';  
 
-	return (printed);
+    while (index > 0) {
+        index--;
+        binaryString[index] = num % 2 + '0';
+        num /= 2;
+    }
+
+    return (binaryString);
 }

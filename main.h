@@ -7,7 +7,6 @@ int _printf(const char *format, ...);
 int format_s(va_list args, char c, int count);
 int print_number(int n, int count);
 int print_string(char *str);
-int print_binary(int decimal);
+char *print_binary(int num);
 int print_char(char c);
-int _escapechar(char n);
 #endif
